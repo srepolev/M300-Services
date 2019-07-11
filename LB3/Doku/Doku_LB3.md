@@ -1,60 +1,77 @@
 # M300-Services
 
-K1:
-VirtualBox:
- 
-Git-Client:
+# K1:
+-- siehe docx file
  
 
-Sshkey:
- 
- 
-Visual Studio:
- 
-
-K2:
+# K2:
 Github account:
  
 
 Gitbash:
+
 git config --global user.name "srepolev"
+
 git config --global user.email davide.trabucco@edu.tbz.ch
+
 git status                      # Geänderte Datei(en) werden rot aufgelistet
+
 git add -A                      # Fügt alle Dateien zum "Upload" hinzu
+
 git status                      # Der Status ist nun grün > Dateien sind Upload-bereit (Optional) 
+
 git commit -m "Mein Kommentar"  # Upload wird "commited" >Kommentar zu ist notwendig
+
 git status                      # Dateien werden nun als "zum Pushen bereit" angezeigt
+
 git push                        #Upload bzw. Push wird durchgeführt
 
 
-
-
-
-
-Wissensstand
+# Wissensstand
 Containerisierung / Docker
-Die Container teilen sich mit dem host den Kernel und verwenden unter Linux ensprechende Kernelmodule um die Container von dem Host zu isolieren. Jedoch bietet dies keine hohe Isolierung wie bei Virtuellen Maschinen. Container beinhalten auch kein eigenes Betriebssystem
+
+Die Container teilen sich mit dem host den Kernel und verwenden unter Linux ensprechende Kernelmodule um die Container von dem Host zu isolieren. Jedoch bietet dies keine hohe Isolierung wie bei Virtuellen Maschinen. Container beinhalten auch kein eigenes Betriebssystem.
+
 Vorteile: kurzen Aufstartzeiten, geringerer CPU-Overhead, Portierbar 
+
 Microservices
+
 Microservices führen Applikationen/Services aus. Eine Applikation wird so weit aufgeteilt, dass viele kleine Services entstehen. Microservices können beliebig gestartet oder gestoppt werden ohne dass gleich die ganze Website betroffen ist. Z.B. wird bei einer Google Anfrage ein Microservice gestartet, wenn die Suche fertig ist wird er wieder gestoppt.
-K3
+
+# K3
 Docker Befehle (Beispiele):
-Befehl	Erklärung
-docker run	Container starten
-docker stop	Container Stoppen
-docker-compose up	Docker-compose Umgebung starten
-docker-compose down	Docker-compose Umgebung stoppen. Entfernt anschliessend alle Container.
-docker images	Heruntergeladene Images auflistet
-docker log	Logs eines Containers anzeigen
-docker ps	Listet container auf
-docker rm	Container Löschen
+
+
+docker run	     #Container starten
+
+docker stop	       #Container Stoppen
+
+docker-compose up	#Docker-compose Umgebung starten
+
+docker-compose down	    #Docker-compose Umgebung stoppen. Entfernt anschliessend alle Container.
+
+docker images	    #Heruntergeladene Images auflistet
+
+docker log	    #Logs eines Containers anzeigen
+
+docker ps	    #Listet container auf
+
+docker rm	    #Container Löschen
+
+
 
 Voraussetzungen, damit die Container funktionieren:
+
 Host File (da kein DNS)
+
 192.168.60.101	test.ch
+
 192.168.60.101	wordpress.test.ch
+
 192.168.60.101	owncloud.test.ch
+
 192.168.60.101  localhost
+
 
 Reverse Proxy erstellen
 docker network create reverse_proxy 
